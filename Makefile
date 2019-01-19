@@ -365,11 +365,10 @@ ${SSM_CACHE}:
 	@echo "PLS create directory $@ (need ~100MByte)" ; false
 
 ${SSM_CACHE}/afsisio_1.0u_all.ssm:
-	cd ${SSM_CACHE} && wget ${WEB_HOME}/afsisio_1.0u_all.ssm
+	cd ${SSM_CACHE} && wget --progress=dot:giga ${WEB_HOME}/afsisio_1.0u_all.ssm
 
 ${SSM_CACHE}/armnlib_2.0u_all.ssm:
-	cd ${SSM_CACHE} && wget ${WEB_HOME}/armnlib_2.0u_all.ssm
-
+	cd ${SSM_CACHE} && wget --progress=dot:giga ${WEB_HOME}/armnlib_2.0u_all.ssm
 
 ${SSM_REPOSITORY}/afsisio_1.0u_all.ssm: ${SSM_CACHE}/afsisio_1.0u_all.ssm
 	ln -sf ${SSM_CACHE}/afsisio_1.0u_all.ssm ${SSM_REPOSITORY}/afsisio_1.0u_all.ssm
